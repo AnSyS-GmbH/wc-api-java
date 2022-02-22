@@ -10,6 +10,7 @@ public enum EndpointBaseType {
     ORDERS("orders"),
     PRODUCTS("products"),
     PRODUCTS_ATTRIBUTES("products/attributes"),
+    PRODUCTS_ATTRIBUTES_TERMS("products/attributes/PARAMETER1/terms"),
     PRODUCTS_CATEGORIES("products/categories"),
     PRODUCTS_SHIPPING_CLASSES("products/shipping_classes"),
     PRODUCTS_TAGS("products/tags"),
@@ -28,5 +29,8 @@ public enum EndpointBaseType {
 
     public String getValue() {
         return value;
+    }
+    public String getValue(int pparameter) {
+        return value.replaceAll("PARAMETER1", Integer.toString(pparameter));
     }
 }
